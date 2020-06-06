@@ -115,9 +115,19 @@
     <a href="/darkbluejoli.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/darkbluejoli.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">1</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/darkbluejoli.github.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">0</span></a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/darkbluejoli.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+    <a href="/darkbluejoli.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">1</span></a>
 
   </li>
   </ul>
@@ -147,7 +157,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/darkbluejoli/darkbluejoli.github.io/2020/05/25/%E5%87%BD%E6%95%B0API/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/darkbluejoli/darkbluejoli.github.io/2020/06/06/first/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="http://qafiz86cj.bkt.clouddn.com/head.jpg">
@@ -161,211 +171,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/darkbluejoli.github.io/2020/05/25/%E5%87%BD%E6%95%B0API/" class="post-title-link" itemprop="url">函数API</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-25 19:21:28" itemprop="dateCreated datePublished" datetime="2020-05-25T19:21:28+08:00">2020-05-25</time>
-            </span>
-
-          
-            <span id="/darkbluejoli.github.io/2020/05/25/%E5%87%BD%E6%95%B0API/" class="post-meta-item leancloud_visitors" data-flag-title="函数API" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/darkbluejoli.github.io/2020/05/25/%E5%87%BD%E6%95%B0API/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/darkbluejoli.github.io/2020/05/25/%E5%87%BD%E6%95%B0API/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">StuNode</span> <span class="title">SN</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">StuNode</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> xh; <span class="comment">//学号</span></span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">11</span>]; <span class="comment">//姓名最多五个字，每个字占两个字节</span></span><br><span class="line">    <span class="keyword">char</span> jg[<span class="number">41</span>]; <span class="comment">// 籍贯最多20个字</span></span><br><span class="line">    <span class="keyword">char</span> address[<span class="number">101</span>]; <span class="comment">//通信地址最多50个字</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="函数API"><a href="#函数API" class="headerlink" title="函数API"></a>函数API</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Save</span><span class="params">()</span></span>;<span class="comment">//创建带头结点链表，并且储存链表信息到txt文件中</span></span><br><span class="line"></span><br><span class="line"><span class="function">SN* <span class="title">Read</span><span class="params">(<span class="keyword">char</span> filename)</span></span>; <span class="comment">//传入文件名，输出并传出信息链表</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Search1</span><span class="params">(SN *head)</span></span>; <span class="comment">// 传入链表头结点，函数内部选择查询方式,输出籍贯</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Search2</span><span class="params">(SN *head)</span></span>; <span class="comment">//按照籍贯查询所有籍贯学生</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Add</span><span class="params">(SN *head,SN x)</span></span>; <span class="comment">//添加学生籍贯信息,传入学生节点</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Deleted</span><span class="params">(SN *head,<span class="keyword">int</span> xh)</span></span>; <span class="comment">//传入学号，进行删除</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Change</span><span class="params">(SN *head,<span class="keyword">int</span> xh)</span></span>; <span class="comment">//传入学号，修改籍贯信息</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Claprint</span><span class="params">(SN *head)</span></span>; <span class="comment">//分别输出上海户籍和非上海户籍学生，内部选择是否存盘</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Print</span><span class="params">(SN *head)</span></span>;<span class="comment">//输出所有学生籍贯信息</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sort</span><span class="params">(SN *head)</span></span>; <span class="comment">// 按学号对链表进行排序</span></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/darkbluejoli/darkbluejoli.github.io/2020/05/22/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="http://qafiz86cj.bkt.clouddn.com/head.jpg">
-      <meta itemprop="name" content="深蓝JOLI">
-      <meta itemprop="description" content="还没熟悉学校就要升大二的懵逼学生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="深蓝JOLI的小站">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/darkbluejoli.github.io/2020/05/22/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="post-title-link" itemprop="url">程序设计</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-22 13:49:56" itemprop="dateCreated datePublished" datetime="2020-05-22T13:49:56+08:00">2020-05-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-06 00:22:17" itemprop="dateModified" datetime="2020-06-06T00:22:17+08:00">2020-06-06</time>
-              </span>
-
-          
-            <span id="/darkbluejoli.github.io/2020/05/22/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="post-meta-item leancloud_visitors" data-flag-title="程序设计" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/darkbluejoli.github.io/2020/05/22/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/darkbluejoli.github.io/2020/05/22/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="程序设计"><a href="#程序设计" class="headerlink" title="程序设计"></a>程序设计</h1><p>我们小组要做的程序是：</p>
-<img src="/darkbluejoli.github.io/2020/05/22/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/20200523214747.png" class="install" title="图片显示失败">
-
-<p>因为是对教师是独立没有关联的单位，要对其进行信息管理，最方便的存储结构是单链表。</p>
-<p>我的想法是教师按照编号进行单链表存储，节点信息包括工作量的各个方面。</p>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>教师姓名是英文的吗？</p>
-<pre><code>*写中文*</code></pre><p>名称和姓名有什么区别？</p>
-<p>​        <em>是学校名称</em></p>
-<p>类别有哪些？</p>
-<p>​        <em>是教师职称</em></p>
-<p>备注会写些什么？</p>
-<pre><code>*置空*</code></pre><p>什么是工作量址？</p>
-<p>​    <em>是工作量值</em></p>
-<p>职称分类：</p>
-<p>​    大学教师职称是大学里教师的职称，分为助教、讲师、副教授、教授四个级别。*</p>
-<p>中文字符储存和读取问题</p>
-<p>   从文档读取中文字符和输出是遇到乱码问题，查资料得知txt文件编码要改成ANSI，遂解决。</p>
-<h2 id="函数API说明"><a href="#函数API说明" class="headerlink" title="函数API说明"></a>函数API说明</h2><h4 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span> <span class="title">teacher</span></span></span><br><span class="line"><span class="class"><span class="title">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">  <span class="keyword">int</span> bh;</span><br><span class="line">  <span class="keyword">int</span> gh;</span><br><span class="line">  ....</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-排序"><a href="#1-排序" class="headerlink" title="1.排序"></a>1.排序</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(teacher * head)</span></span>;  <span class="comment">//按编号排序</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2-查询"><a href="#2-查询" class="headerlink" title="2.查询"></a>2.查询</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">search</span><span class="params">(teacher *head)</span></span>;<span class="comment">//内部选择查询何种信息，直接输出</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="3-更新"><a href="#3-更新" class="headerlink" title="3.更新"></a>3.更新</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">updata</span><span class="params">(teacher *head)</span></span>;<span class="comment">//内部选择更新何种信息</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="4-插入："><a href="#4-插入：" class="headerlink" title="4.插入："></a>4.插入：</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(teacher *head,teacher x)</span></span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-删除"><a href="#5-删除" class="headerlink" title="5.删除"></a>5.删除</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">deleted</span><span class="params">(teacher *head,<span class="keyword">int</span> x)</span></span>;<span class="comment">//按编号删除</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="6-浏览"><a href="#6-浏览" class="headerlink" title="6.浏览"></a>6.浏览</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(teacher *head)</span></span>;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/darkbluejoli/darkbluejoli.github.io/2020/05/17/page/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="http://qafiz86cj.bkt.clouddn.com/head.jpg">
-      <meta itemprop="name" content="深蓝JOLI">
-      <meta itemprop="description" content="还没熟悉学校就要升大二的懵逼学生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="深蓝JOLI的小站">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/darkbluejoli.github.io/2020/05/17/page/" class="post-title-link" itemprop="url">page</a>
+            <a href="/darkbluejoli.github.io/2020/06/06/first/" class="post-title-link" itemprop="url">随笔</a>
         </h2>
 
         <div class="post-meta">
@@ -376,31 +182,10 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-05-17 11:16:29 / 修改时间：11:39:45" itemprop="dateCreated datePublished" datetime="2020-05-17T11:16:29+08:00">2020-05-17</time>
+              <time title="创建时间：2020-06-06 19:00:21 / 修改时间：20:26:52" itemprop="dateCreated datePublished" datetime="2020-06-06T19:00:21+08:00">2020-06-06</time>
             </span>
 
           
-            <span id="/darkbluejoli.github.io/2020/05/17/page/" class="post-meta-item leancloud_visitors" data-flag-title="page" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/darkbluejoli.github.io/2020/05/17/page/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/darkbluejoli.github.io/2020/05/17/page/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
 
         </div>
       </header>
@@ -411,352 +196,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img src="http://qafiz86cj.bkt.clouddn.com/IMG_20200511_191540.jpg" alt></p>
-<p><em>故乡的黄昏，总是美得那么宁静。</em></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/darkbluejoli/darkbluejoli.github.io/2020/05/17/help/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="http://qafiz86cj.bkt.clouddn.com/head.jpg">
-      <meta itemprop="name" content="深蓝JOLI">
-      <meta itemprop="description" content="还没熟悉学校就要升大二的懵逼学生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="深蓝JOLI的小站">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/darkbluejoli.github.io/2020/05/17/help/" class="post-title-link" itemprop="url">help</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-17 10:45:03" itemprop="dateCreated datePublished" datetime="2020-05-17T10:45:03+08:00">2020-05-17</time>
-            </span>
-
-          
-            <span id="/darkbluejoli.github.io/2020/05/17/help/" class="post-meta-item leancloud_visitors" data-flag-title="help" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/darkbluejoli.github.io/2020/05/17/help/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/darkbluejoli.github.io/2020/05/17/help/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/darkbluejoli/darkbluejoli.github.io/2020/05/17/PicGo-%E5%9B%BE%E5%BA%8A/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="http://qafiz86cj.bkt.clouddn.com/head.jpg">
-      <meta itemprop="name" content="深蓝JOLI">
-      <meta itemprop="description" content="还没熟悉学校就要升大二的懵逼学生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="深蓝JOLI的小站">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/darkbluejoli.github.io/2020/05/17/PicGo-%E5%9B%BE%E5%BA%8A/" class="post-title-link" itemprop="url">PicGo&&图床</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-17 03:23:34" itemprop="dateCreated datePublished" datetime="2020-05-17T03:23:34+08:00">2020-05-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-06 08:37:30" itemprop="dateModified" datetime="2020-06-06T08:37:30+08:00">2020-06-06</time>
-              </span>
-
-          
-            <span id="/darkbluejoli.github.io/2020/05/17/PicGo-%E5%9B%BE%E5%BA%8A/" class="post-meta-item leancloud_visitors" data-flag-title="PicGo&&图床" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/darkbluejoli.github.io/2020/05/17/PicGo-%E5%9B%BE%E5%BA%8A/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/darkbluejoli.github.io/2020/05/17/PicGo-%E5%9B%BE%E5%BA%8A/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="配置自动图床上传服务"><a href="#配置自动图床上传服务" class="headerlink" title="配置自动图床上传服务"></a>配置自动图床上传服务</h1><h2 id="什么是图床工具"><a href="#什么是图床工具" class="headerlink" title="什么是图床工具"></a>什么是图床工具</h2><p>​    所谓<strong>图床工具</strong>，就是自动把本地图片转换成链接的一款工具。而<em>PicGo</em>是其中一款比较优秀的图床工具。</p>
-<h2 id="PicGo的下载与安装"><a href="#PicGo的下载与安装" class="headerlink" title="PicGo的下载与安装"></a>PicGo的下载与安装</h2><p>​    访问<a href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a>的Github托管平台下载合适的版本。<strong>注意</strong>可能因为某些的原因，Github下载较慢 ，建议开启加速器。</p>
-<p><img src="/darkbluejoli.github.io/darkbluejoli/darkbluejoli.github.io/2020/05/17/PicGo-%E5%9B%BE%E5%BA%8A/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20200517031815.png" alt></p>
-<p>​    以windows平台为例，直接<a href="https://github.com/Molunerfinn/PicGo/releases">下载</a>.exe文件，安装即可。</p>
-<p>{asset_img  instal 搜狗截图20200517040256.png 图片加载失败 %}</p>
-<h2 id="PicGo的配置"><a href="#PicGo的配置" class="headerlink" title="PicGo的配置"></a>PicGo的配置</h2><p>​    以七牛云为例，先获取AK和SK，然后是其他个人信息，如果储存区域为华东，则填z0</p>
-<img src="http://qafiz86cj.bkt.clouddn.com/搜狗截图20200517035544.png" style="zoom:67%;">
-
-<h2 id="上传获取Markdown链接"><a href="#上传获取Markdown链接" class="headerlink" title="上传获取Markdown链接"></a>上传获取Markdown链接</h2><p>​    之后直接拖拽上传，会自动复制Markdown图片链接。非常方便。</p>
-<img src="http://qafiz86cj.bkt.clouddn.com/20200517041505.png" alt="image-20200517041511933" style="zoom:67%;">
-
-<p><em>本文所有图片即用PicGo取得链接，非常方便！</em></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/darkbluejoli/darkbluejoli.github.io/2020/05/17/1-0-0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="http://qafiz86cj.bkt.clouddn.com/head.jpg">
-      <meta itemprop="name" content="深蓝JOLI">
-      <meta itemprop="description" content="还没熟悉学校就要升大二的懵逼学生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="深蓝JOLI的小站">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/darkbluejoli.github.io/2020/05/17/1-0-0/" class="post-title-link" itemprop="url">1.0.0</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-05-17 01:42:15 / 修改时间：02:12:00" itemprop="dateCreated datePublished" datetime="2020-05-17T01:42:15+08:00">2020-05-17</time>
-            </span>
-
-          
-            <span id="/darkbluejoli.github.io/2020/05/17/1-0-0/" class="post-meta-item leancloud_visitors" data-flag-title="1.0.0" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/darkbluejoli.github.io/2020/05/17/1-0-0/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/darkbluejoli.github.io/2020/05/17/1-0-0/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="第一次更新"><a href="#第一次更新" class="headerlink" title="第一次更新"></a>第一次更新</h1><h2 id="终于像个博客了"><a href="#终于像个博客了" class="headerlink" title="终于像个博客了"></a>终于像个博客了</h2><p>​    缝缝补补收拾了一天之后，我的小站增加了评论系统、阅读次数统计、加了个小小的播放器点缀一下，还用云服务器建设了个私有的图床。终于，我的小站像个模样了，不再破败不堪，不再bug百出。</p>
-<p>​    <img src="http://qafiz86cj.bkt.clouddn.com/plug.gif" alt="鼓掌" style="zoom:67%;"></p>
-<h2 id="现在的问题还是不少"><a href="#现在的问题还是不少" class="headerlink" title="现在的问题还是不少"></a>现在的问题还是不少</h2><p>​    比如图片问题，私有图床每次使用图片都需要先在云服务器上上传图片本体，之后复制外源链接后才可以使用，很不方便，所以亟待解决的就是配置自动上传服务。</p>
-<h2 id="长路漫漫"><a href="#长路漫漫" class="headerlink" title="长路漫漫"></a>长路漫漫</h2><p>​    自己需要学的东西还很多，我会慢慢记录一点一滴。</p>
-<p><img src="http://qafiz86cj.bkt.clouddn.com/sunup.jpg" alt="朝阳"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/darkbluejoli/darkbluejoli.github.io/2020/05/17/D-day/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="http://qafiz86cj.bkt.clouddn.com/head.jpg">
-      <meta itemprop="name" content="深蓝JOLI">
-      <meta itemprop="description" content="还没熟悉学校就要升大二的懵逼学生">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="深蓝JOLI的小站">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/darkbluejoli.github.io/2020/05/17/D-day/" class="post-title-link" itemprop="url">D-day</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-05-17 01:08:55 / 修改时间：02:12:42" itemprop="dateCreated datePublished" datetime="2020-05-17T01:08:55+08:00">2020-05-17</time>
-            </span>
-
-          
-            <span id="/darkbluejoli.github.io/2020/05/17/D-day/" class="post-meta-item leancloud_visitors" data-flag-title="D-day" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/darkbluejoli.github.io/2020/05/17/D-day/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/darkbluejoli.github.io/2020/05/17/D-day/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="你好！陌生人。"><a href="#你好！陌生人。" class="headerlink" title="你好！陌生人。"></a>你好！陌生人。</h1><h3 id="这是我的第一个网站。"><a href="#这是我的第一个网站。" class="headerlink" title="这是我的第一个网站。"></a>这是我的第一个网站。</h3><p>​    第一次做博客，心里其实还是挺兴奋的。昨天花了一晚上的时间研究<em>Hexo</em>和<em>Gitee</em>。不知不觉就整到了凌晨四点。今早醒了之后就又起身开始学习<em>Markdown</em>。</p>
-<h3 id="关于博客的想法"><a href="#关于博客的想法" class="headerlink" title="关于博客的想法"></a>关于博客的想法</h3><p>​    其实自己本身的目的是学习<em>HTML/CSS</em>和<em>JavaScript</em>，但是看了些书之后觉得无从下手。于是就想到了先做个博客，做中学，学中做。慢慢来提升自己。然后就有了这个博客。这个博客是用了<em>Hexo</em>框架生成的静态网页，之后上传到<em>Gitee</em>仓库，利用<em>Gitee</em>的<em>Pages</em>服务架设的。因为<em>Gitee</em>的<em>Pages</em>服务是免费的，所以不需要money。白嫖真香。</p>
-<img src="http://qafiz86cj.bkt.clouddn.com/zhenxiang.jpg" alt="真香" style="zoom: 67%;">
-
-<h3 id="关于之后"><a href="#关于之后" class="headerlink" title="关于之后"></a>关于之后</h3><p>​    之后会逐渐充实&amp;美化自己的小小博客。分享一些生活和经验。新世界的大门开启啦！</p>
-
+          <h2 id="成为一个酷boy"><a href="#成为一个酷boy" class="headerlink" title="成为一个酷boy"></a>成为一个酷boy</h2><pre><code>一直以来，我都是一个浮躁的人。思想浮躁，做事浮躁。小时候，我喜欢看小说，却从未读完过哪怕一本。长大后，我对于自身浮躁的感觉越来越强烈。从刚开始作弊完成老师布置的周末作业，到最后完全不写，再到钻研记忆法以逃避背书，最后遇到困难总是推到重来，给自己塑造精神上的洁癖，明知南辕北辙却不停步。浮躁给我带来了太多的痛苦。</code></pre><p>​    我从《禅与摩托车维修艺术》中看到这样一句话：<em>当你做某件事的时候，一旦想要求快，就表示你再不关心它，而想去做别的事。</em> 我感觉自己浮躁的最大表现就是求快，想一周学完高三的所有数学，想两天学完c++，·····。现在仔细回想一下，这句话确实说的没错，自己想一周学完数学，其实是为了高考，自己并不关心数学，而两天学完C++是为了去写完整的项目，也是并不对它在意。再一想，自己好像所有的事情都是想着快速解决，几乎是每一件事。</p>
+<p>​    自己一味的求快是为了什么呢？我从中收获了什么呢？自己享受到学习数学和C++的乐趣了吗？我想自己并没有。这样匆匆的结束自己快乐吗？我想也没有。浮躁，确实是太浮躁。我想，人生这么短，就这样匆匆的来了，匆匆的做了些事，最后再匆匆的走了，又有什么意义呢？</p>
+<p>​    我想，或许自己真的是时候该静下心来，不再关心达到目的的时间，仅仅就是慢慢的，享受做每一件事的乐趣。自己想做的事情还有很多，还想成为一个酷酷的人。人生虽短，但留给我的或许还有三四十年，慢慢感受，足以。</p>
+<p>​    从现在起，开始做一个酷boy！加油吧。</p>
+<img src="/darkbluejoli.github.io/2020/06/06/first/coolboy.jpg" class title="CoolBoy">
       
     </div>
 
@@ -839,9 +283,15 @@
       <div class="site-state-item site-state-posts">
           <a href="/darkbluejoli.github.io/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/darkbluejoli.github.io/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -931,35 +381,6 @@
   
 
   
-
-
-<script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
-      appId      : 'hak8WzDoSrmHL9T2DU8EJGX5-gzGzoHsz',
-      appKey     : 'BCSBIBoi45sxlnMFkn5fsDNn',
-      placeholder: "Just go go",
-      avatar     : 'mm',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : true,
-      lang       : '' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : false,
-      serverURLs : ''
-    });
-  }, window.Valine);
-});
-</script>
 
 </body>
 </html>
