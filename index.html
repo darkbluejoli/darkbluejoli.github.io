@@ -183,7 +183,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-09-19 11:28:50 / 修改时间：11:47:26" itemprop="dateCreated datePublished" datetime="2020-09-19T11:28:50+08:00">2020-09-19</time>
+              <time title="创建时间：2020-09-19 11:28:50 / 修改时间：11:49:37" itemprop="dateCreated datePublished" datetime="2020-09-19T11:28:50+08:00">2020-09-19</time>
             </span>
 
           
@@ -197,18 +197,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <pre><code>## 变长数组</code></pre><h2 id="为什么需要变长数组"><a href="#为什么需要变长数组" class="headerlink" title="为什么需要变长数组"></a>为什么需要变长数组</h2><p>​    在定义数组时，我们一般使用语句： </p>
+          <h2 id="为什么需要变长数组"><a href="#为什么需要变长数组" class="headerlink" title="为什么需要变长数组"></a>为什么需要变长数组</h2><p>​    在定义数组时，我们一般使用语句： </p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[<span class="number">10</span>];</span><br></pre></td></tr></table></figure>
 
 <p>​    这样的定义方式有个明显的问题，我们必须预先得知输入数据的规模，若数据规模未知，便会造成严重问题。</p>
 <p>​    而解决的唯一方法，便是使用变长数组。在C/C++中并没有变长数组这一数据结构，因此我们需要自己定义。</p>
-<!--readmore-->
-
-<h2 id="变长数组如何定义"><a href="#变长数组如何定义" class="headerlink" title="变长数组如何定义"></a>变长数组如何定义</h2><p>​    我们考虑使用new命令动态开辟内存空间，代码如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> len;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; len;</span><br><span class="line">	<span class="comment">//用指针p指向new动态分配的长度为len*sizeof（int）的内存空间</span></span><br><span class="line">    <span class="keyword">int</span> *p = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>………未完待续</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/darkbluejoli/2020/09/19/C-%E5%AE%9A%E4%B9%89%E8%BE%B9%E9%95%BF%E6%95%B0%E7%BB%84/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -455,10 +456,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-06-06 23:44:28 / 修改时间：23:53:35" itemprop="dateCreated datePublished" datetime="2020-06-06T23:44:28+08:00">2020-06-06</time>
+              <time title="创建时间：2020-06-06 23:44:28" itemprop="dateCreated datePublished" datetime="2020-06-06T23:44:28+08:00">2020-06-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-19 11:50:10" itemprop="dateModified" datetime="2020-09-19T11:50:10+08:00">2020-09-19</time>
+              </span>
 
           
 
@@ -472,9 +479,14 @@
 
       
           <h1 id="从零开始构建现代计算机"><a href="#从零开始构建现代计算机" class="headerlink" title="从零开始构建现代计算机"></a>从零开始构建现代计算机</h1><p>​    我第一次接触这本书的时间是2015年，当时还在上高中，由于沉迷计算机技术，发现这本书的时候简直高兴地睡不着觉，但是却因为一心想着搞清楚图形界面跟黑洞洞的DOS有什么关系，加之当时对布尔逻辑不太了解，描绘的芯片结果总是错，所以大概做到第一个CPU大概第五章的时候就没再继续下去了。不过这本书确实是好书，今天打算重新开坑，从零开始撸一台计算机出来。</p>
-<img src="/darkbluejoli/2020/06/06/Nand/Nand.png" class title="Nand">
-
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/darkbluejoli/2020/06/06/Nand/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -524,7 +536,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-19 11:27:59" itemprop="dateModified" datetime="2020-09-19T11:27:59+08:00">2020-09-19</time>
+                <time title="修改时间：2020-09-19 11:49:19" itemprop="dateModified" datetime="2020-09-19T11:49:19+08:00">2020-09-19</time>
               </span>
 
           
@@ -539,13 +551,14 @@
 
       
           <h2 id="成为一个酷boy"><a href="#成为一个酷boy" class="headerlink" title="成为一个酷boy"></a>成为一个酷boy</h2><p>​    一直以来，我都是一个浮躁的人。思想浮躁，做事浮躁。小时候，我喜欢看小说，却从未读完过哪怕一本。长大后，我对于自身浮躁的感觉越来越强烈。从刚开始作弊完成老师布置的周末作业，到最后完全不写，再到钻研记忆法以逃避背书，最后遇到困难总是推到重来，给自己塑造精神上的洁癖，明知南辕北辙却不停步。浮躁给我带来了太多的痛苦。</p>
-<!--readmore-->
-
-<p>​    我从《禅与摩托车维修艺术》中看到这样一句话：<em>当你做某件事的时候，一旦想要求快，就表示你再不关心它，而想去做别的事。</em> 我感觉自己浮躁的最大表现就是求快，想一周学完高三的所有数学，想两天学完c++，·····。现在仔细回想一下，这句话确实说的没错，自己想一周学完数学，其实是为了高考，自己并不关心数学，而两天学完C++是为了去写完整的项目，也是并不对它在意。再一想，自己好像所有的事情都是想着快速解决，几乎是每一件事。</p>
-<p>​    自己一味的求快是为了什么呢？我从中收获了什么呢？自己享受到学习数学和C++的乐趣了吗？我想自己并没有。这样匆匆的结束自己快乐吗？我想也没有。浮躁，确实是太浮躁。我想，人生这么短，就这样匆匆的来了，匆匆的做了些事，最后再匆匆的走了，又有什么意义呢？</p>
-<p>​    我想，或许自己真的是时候该静下心来，不再关心达到目的的时间，仅仅就是慢慢的，享受做每一件事的乐趣。自己想做的事情还有很多，还想成为一个酷酷的人。人生虽短，但留给我的或许还有三四十年，慢慢感受，足以。</p>
-<p>​    从现在起，开始做一个酷boy！加油吧。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/darkbluejoli/2020/06/06/first/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
