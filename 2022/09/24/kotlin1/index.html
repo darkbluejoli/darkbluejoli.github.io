@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.darkbluejoli.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Kotlin笔记kotlin常识Kotlin 是由JetBrains公司开发的，2011年发布第一个版本，2016年发布正式版。 C和C++都属于编译型语言，由编译器将源代码一次性的编译成计算机可识别的二进制文件。而Python和Javascript都属于解释性语言，在程序执行时一行行的解释成二进制数据。但Java和kotlin也属于解释型语言，他们先将源代码编译成class文件，然后再通过jav">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kotlin笔记一">
+<meta property="og:url" content="https://blog.darkbluejoli.top/2022/09/24/kotlin1/index.html">
+<meta property="og:site_name" content="深蓝de小屋">
+<meta property="og:description" content="Kotlin笔记kotlin常识Kotlin 是由JetBrains公司开发的，2011年发布第一个版本，2016年发布正式版。 C和C++都属于编译型语言，由编译器将源代码一次性的编译成计算机可识别的二进制文件。而Python和Javascript都属于解释性语言，在程序执行时一行行的解释成二进制数据。但Java和kotlin也属于解释型语言，他们先将源代码编译成class文件，然后再通过jav">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-24T08:02:05.000Z">
+<meta property="article:modified_time" content="2022-09-24T09:38:25.346Z">
+<meta property="article:author" content="DarkBlueJOLI">
+<meta property="article:tag" content="Kotlin Android">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.darkbluejoli.top/2022/09/24/kotlin1/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.darkbluejoli.top/2022/09/24/kotlin1/","path":"2022/09/24/kotlin1/","title":"kotlin笔记一"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>kotlin笔记一 | 深蓝de小屋</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">深蓝de小屋</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Kotlin%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">Kotlin笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#kotlin%E5%B8%B8%E8%AF%86"><span class="nav-number">1.1.</span> <span class="nav-text">kotlin常识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">1.2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6"><span class="nav-number">1.4.</span> <span class="nav-text">逻辑控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.4.1.</span> <span class="nav-text">if条件语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#when%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.4.2.</span> <span class="nav-text">when条件语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.4.3.</span> <span class="nav-text">循环语句</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="DarkBlueJOLI"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">DarkBlueJOLI</p>
+  <div class="site-description" itemprop="description">中道而立，能者咸从</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/darkbluejoli" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;darkbluejoli" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:darkbluejoli@foxmail.com" title="E-Mail → mailto:darkbluejoli@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.darkbluejoli.top/2022/09/24/kotlin1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="DarkBlueJOLI">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="深蓝de小屋">
+      <meta itemprop="description" content="中道而立，能者咸从">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="kotlin笔记一 | 深蓝de小屋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          kotlin笔记一
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-09-24 16:02:05 / 修改时间：17:38:25" itemprop="dateCreated datePublished" datetime="2022-09-24T16:02:05+08:00">2022-09-24</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Kotlin笔记"><a href="#Kotlin笔记" class="headerlink" title="Kotlin笔记"></a>Kotlin笔记</h1><h2 id="kotlin常识"><a href="#kotlin常识" class="headerlink" title="kotlin常识"></a>kotlin常识</h2><p>Kotlin 是由JetBrains公司开发的，2011年发布第一个版本，2016年发布正式版。</p>
+<p>C和C++都属于编译型语言，由编译器将源代码一次性的编译成计算机可识别的二进制文件。而Python和Javascript都属于解释性语言，在程序执行时一行行的解释成二进制数据。但Java和kotlin也属于解释型语言，他们先将源代码编译成class文件，然后再通过java虚拟机进行解释运行。</p>
+<span id="more"></span>
+<hr>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>Kotlin的语法更加简洁，同样的功能，比java减少50%的代码量，除此之外，还增加了很多现代高级语言的语法特性，而且杜绝了空指针问题。</p>
+<p>kotlin中基本变量不需要声明变量类型，但是需要使用val或var两个关键字，val代表不可变变量，var代表可变变量。</p>
+<p>但我们也可以显式的声明变量类型 例如 <code>val a: Int =a</code> 。</p>
+<p>相比与java中的基本数据类型，在kotlin中的基本数据类型都是对象数据类型。</p>
+<hr>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>函数和方法是同一个概念，只是叫法习惯不一样，并没有什么区别。</p>
+<p>当一个函数中只有一行代码时，我们可以直接将唯一的一行代码写在函数定义的尾部，用等号连接，例如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> fun largerNumber(num1:Int,num2:Int):Int&#123;</span><br><span class="line">    return max(num1,num2)</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>等于</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun largerNumber(num1:Int,num2:Int):Int = max(num1,num2)</span><br></pre></td></tr></table></figure>
+<p>其中，可以推导出函数返回值必然是一个Int，所以可以进一步简化</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun largerNumber(num1:Int,num2:Int) = max(num1,num2)</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="逻辑控制"><a href="#逻辑控制" class="headerlink" title="逻辑控制"></a>逻辑控制</h2><h3 id="if条件语句"><a href="#if条件语句" class="headerlink" title="if条件语句"></a>if条件语句</h3><p>和Java中的if语句唯一的区别就是可以拥有返回值<br>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">val value = if(1&gt;2)&#123;</span><br><span class="line">    1</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    2</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>返回值就是if语句每一个条件中的最后一行代码的返回值。<br>所以此时value的值为2</p>
+<h3 id="when条件语句"><a href="#when条件语句" class="headerlink" title="when条件语句"></a>when条件语句</h3><p>Kotlin中的when类似于java中的switch，但又比switch强大 ,when拥有返回值，只会返回匹配的行<br>例如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fun getScore(name:String) = when(name)&#123;</span><br><span class="line">    &quot;Tom&quot; -&gt; 86</span><br><span class="line">    &quot;Jim&quot; -&gt; 77</span><br><span class="line">    &quot;Jack&quot;-&gt; 95</span><br><span class="line">     else -&gt; 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>并且还可以进行类型匹配</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fun checkNumber(num: Number) &#123; </span><br><span class="line">    when (num) &#123; </span><br><span class="line">        is Int -&gt; println(&quot;number is Int&quot;) </span><br><span class="line">        is Double -&gt; println(&quot;number is Double&quot;) </span><br><span class="line">        else -&gt; println(&quot;number not support&quot;) </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>除此之外还可以不传参，扩展其引用场景</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fun getScore(name: String) = when &#123; </span><br><span class="line">    name.startsWith(&quot;Tom&quot;) -&gt; 86 </span><br><span class="line">    name == &quot;Jim&quot; -&gt; 77 </span><br><span class="line">    name == &quot;Jack&quot; -&gt; 95 </span><br><span class="line">    name == &quot;Lily&quot; -&gt; 100 </span><br><span class="line">    else -&gt; 0 </span><br><span class="line">&#125; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><p>while循环和主流的while循环一致<br><strong>如何创建[0,10]的区间数组</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val range = 0..10</span><br></pre></td></tr></table></figure>
+<p><strong>如何创建[0,10)的区间</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val range = 0 until 10</span><br></pre></td></tr></table></figure>
+<p>for-in循环</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fun main() &#123; </span><br><span class="line">    for (i in 0..10) &#123; </span><br><span class="line">        println(i) </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line">//打印结果为0到10</span><br></pre></td></tr></table></figure>
+<p>使用step跳过</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fun main() &#123; </span><br><span class="line">    for (i in 0 until 10 step 2) &#123; </span><br><span class="line">        println(i) </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line">//打印结果为0 2 4 6 8</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Kotlin-Android/" rel="tag"># Kotlin Android</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/09/24/NextConfig/" rel="prev" title="Next主题配置">
+                  <i class="fa fa-chevron-left"></i> Next主题配置
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">DarkBlueJOLI</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
