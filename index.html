@@ -130,7 +130,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -182,7 +182,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.darkbluejoli.top/2022/04/29/Kotlin2/">
+    <link itemprop="mainEntityOfPage" href="https://blog.darkbluejoli.top/2022/09/29/kotlin2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -200,7 +200,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/29/Kotlin2/" class="post-title-link" itemprop="url">kotlin笔记二</a>
+          <a href="/2022/09/29/kotlin2/" class="post-title-link" itemprop="url">kotlin笔记二</a>
         </h2>
 
         <div class="post-meta-container">
@@ -210,15 +210,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2022-04-29 19:24:00" itemprop="dateCreated datePublished" datetime="2022-04-29T19:24:00+08:00">2022-04-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-09-29 09:55:49" itemprop="dateModified" datetime="2022-09-29T09:55:49+08:00">2022-09-29</time>
+      <time title="创建时间：2022-09-29 15:14:12 / 修改时间：16:39:25" itemprop="dateCreated datePublished" datetime="2022-09-29T15:14:12+08:00">2022-09-29</time>
     </span>
 
   
@@ -231,7 +225,184 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          
+          <h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>kotlin中使用class关键字来声明一个类，和java一致。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Person&#123;</span><br><span class="line">    var name = &quot;&quot;</span><br><span class="line">    var age = 0</span><br><span class="line">    fun eat()&#123;</span><br><span class="line">        println(name + &quot; is eating. He is &quot; + age + &quot;years old.&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实例化的时候不需要new关键字</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fun main()&#123;</span><br><span class="line">    val p = Person()</span><br><span class="line">    p.name = &quot;jack&quot;</span><br><span class="line">    p.age = 19</span><br><span class="line">    p.eat()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="继承与构造函数"><a href="#继承与构造函数" class="headerlink" title="继承与构造函数"></a>继承与构造函数</h2><p>kotlin中任何一个非抽象类默认都是不可以被继承的，要想被继承，就需要在前面加上open关键字</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">open class Person&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>java中继承是关键字extends，而在kotlin中使用冒号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class Student:Person()&#123;</span><br><span class="line">    var sno = &quot;&quot;</span><br><span class="line">    var grade = 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>构造函数主要作用是在对象实例化的时候初始化对象的成员变量，其与类名相同。跟Java一样，子类的构造函数必须调用父类的中的构造函数。上面Person类带了括号，在kotlin中是主构造函数的意思，这种写法就是遵循这个规定。<br>Kotlin中的构造函数分为主构造函数和次构造函数两中，分别都有不同要求。<br>每个类默认都有一个不带参数的主构造函数，也可以给它显式的声明参数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Student(val sno:String ,val grade:Int):Person()&#123;</span><br><span class="line">//这里声明了Student带参数的主构造函数，并且调用了Person空参数的主构造函数</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">val Jam = Student(&quot;1922123&quot;,4)</span><br></pre></td></tr></table></figure>
+<p>如果想在主构造函数中对参数进行操作，可以使用init结构体编写逻辑</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Student(val sno:String ,val grade:Int):Person()&#123;</span><br><span class="line">    init&#123;</span><br><span class="line">        println(&quot;sno is&quot; + sno)</span><br><span class="line">        println(&quot;grade is &quot; + grade)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>任何一个类，只能由一个主构造函数，但是可以有多个次构造函数，次构造函数有函数体，次构造函数通过constructor关键字定义。<br>当一个类中既有主构造函数又有次构造函数时，所有的次构造函数必须调用主构造函数（包括间接调用）。  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Student(val sno: String, val grade: Int, name: String, age: Int) :Person(name, age) &#123; </span><br><span class="line">    constructor(name: String, age: Int) : this(&quot;&quot;, 0, name, age) &#123;</span><br><span class="line">    &#125; </span><br><span class="line">    constructor() : this(&quot;&quot;, 0) &#123; </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line">//这里我们定义了两个次构造函数：第一个次构造函数接收name和age参数，然后它又通过this关键字调用了主构造函数，并将sno和grade这两个参数赋值成初始值；第二个次构造函数不接收任何参数，它通过this关键字调用了我们刚才定义的第一个次构造函数，并将name和age参数也赋值成初始值，由于第二个次构造函数间接调用了主构造函数，因此这仍然是合法的。</span><br></pre></td></tr></table></figure>
+<p>当类中没有主构造函数的时候，不需要在继承父类时加括号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Student : Person &#123; </span><br><span class="line">    constructor(name: String, age: Int) : super(name, age) &#123; </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line">//由于没有主构造函数，次构造函数只能直接调用父类的构造函数，上述代码也是将this关键字换成了super关键字</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口的定义</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">interface Study&#123;</span><br><span class="line">    fun readBook()</span><br><span class="line">    fun doHomework()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Java中接口的继承需要使用关键字implements，而kotlin中使用冒号就行。<br>Java在JDK1.8之后允许对接口中定义的函数进行默认实现，Kotlin中也支持。 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">interface Study &#123; </span><br><span class="line">    fun readBooks() </span><br><span class="line">    fun doHomework() &#123; </span><br><span class="line">        println(&quot;do homework default implementation.&quot;) </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line">//doHOmework可以自由选择实现或者不实现，不实现时会自动使用默认的实现逻辑。</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="函数的可见性修饰符"><a href="#函数的可见性修饰符" class="headerlink" title="函数的可见性修饰符"></a>函数的可见性修饰符</h2><p>Java中有public、private、protected和default，而Kotlin中有public、private、protected和internal，使用时直接定义在fun关键字的前面。<br>kotlin中public时默认项，而在Java中default才是默认项。<br>internal只对同一模块中的类可见。<br>|修饰符|Java|Kotlin|<br>|—|—|—|<br>|public|所有类可见|所有类可见（默认）|<br>|private|当前类可见|当前类可见|<br>|protected|当前类、子类、同一包路径下的类可见|当前类、子类可见|<br>|default|同一包路径下的类可见（默认）|无|<br>|internal|无|同一模块中的类可见|</p>
+<hr>
+<h2 id="数据类和单例类"><a href="#数据类和单例类" class="headerlink" title="数据类和单例类"></a>数据类和单例类</h2><p>MVC、MVVM之类的架构模式种M指的就是数据类，数据类通常需要重写equals()、hashCode()、toString()这几个方法<br>数据类通常需要重写equals()、hashCode()、toString()这几个方法。其中，equals()方法用于判断两个数据类是否相等。hashCode()方法作为equals()的配套方法，也需要一起重写，否则会导致HashMap、HashSet等hash相关的系统类无法正常工作。toString()方法用于提供更清晰的输入日志，否则一个数据类默认打印出来的就是一行内存地址。<br>在java中构建数据类</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public class Cellphone &#123; </span><br><span class="line">    String brand; </span><br><span class="line">    double price; </span><br><span class="line">    public Cellphone(String brand, double price) &#123; </span><br><span class="line">        this.brand = brand; </span><br><span class="line">        this.price = price; </span><br><span class="line">    &#125; </span><br><span class="line">    @Override </span><br><span class="line">    public boolean equals(Object obj) &#123; </span><br><span class="line">        if (obj instanceof Cellphone) &#123; </span><br><span class="line">            Cellphone other = (Cellphone) obj; </span><br><span class="line">            return other.brand.equals(brand) &amp;&amp; other.price == price; </span><br><span class="line">        &#125; </span><br><span class="line">        return false; </span><br><span class="line">    &#125; </span><br><span class="line">    @Override </span><br><span class="line">    public int hashCode() &#123;</span><br><span class="line">        return brand.hashCode() + (int) price; </span><br><span class="line">    &#125; </span><br><span class="line">    @Override </span><br><span class="line">    public String toString() &#123; </span><br><span class="line">        return &quot;Cellphone(brand=&quot; + brand + &quot;, price=&quot; + price + &quot;)&quot;; </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>在Kotlin中构建数据类变得极其简单，右击com.example.helloworld 包→New→Kotlin File/Class，在弹出的对话框中输入“Cellphone” ，创建类型选择“Class” 。然后在创建的类中编写如下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data class Cellphone(val brand: String, val price: Double) </span><br></pre></td></tr></table></figure>
+
+<p>当我们希望某个类在全局最多只能拥有一个实例，这时就可以使用单例模式，Java中的写法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton &#123; </span><br><span class="line">    private static Singleton instance; </span><br><span class="line">    private Singleton() &#123;&#125; </span><br><span class="line">    public synchronized static Singleton getInstance() &#123; </span><br><span class="line">        if (instance == null) &#123;</span><br><span class="line">        instance = new Singleton(); </span><br><span class="line">    &#125; </span><br><span class="line">    return instance; </span><br><span class="line">    &#125; </span><br><span class="line">    public void singletonTest() &#123; </span><br><span class="line">        System.out.println(&quot;singletonTest is called.&quot;); </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line">//首先为了禁止外部创建Singleton的实例，我们需要用private关键字将Singleton的构造函数私有化，然后给外部提供了一个getInstance()静态方法用于获取Singleton的实例。在getInstance()方法中，我们判断如果当前缓存的Singleton实例为null，就创建一个新的实例，否则直接返回缓存的实例即可，这就是单例模式的工作机制。</span><br></pre></td></tr></table></figure>
+<p>在Kotlin中创建一个单例类的方式极其简单，只需要将class关键字改成object关键字即可。现在我们尝试创建一个Kotlin版的Singleton单例类，右击com.example.helloworld 包→New→Kotlin File/Class，在弹出的对话框中输入“Singleton” ，创建类型选择“Object” ，点击“OK”完成创建。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.darkbluejoli.top/2022/09/29/JavaNote1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="DarkBlueJOLI">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="深蓝de小屋">
+      <meta itemprop="description" content="大四<br/>计算机科学与技术专业<br/>Bug制造商<br/>搬砖等级:LV1">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 深蓝de小屋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/09/29/JavaNote1/" class="post-title-link" itemprop="url">Java笔记一</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-09-29 13:40:13 / 修改时间：13:42:29" itemprop="dateCreated datePublished" datetime="2022-09-29T13:40:13+08:00">2022-09-29</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="常识"><a href="#常识" class="headerlink" title="常识"></a>常识</h1><p>Java中的@Override是用来标识后面跟着的方法是重写的，如果后面跟着的方法写错，程序会发生编译错误。  </p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.darkbluejoli.top/2022/09/29/AndroidNote1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="DarkBlueJOLI">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="深蓝de小屋">
+      <meta itemprop="description" content="大四<br/>计算机科学与技术专业<br/>Bug制造商<br/>搬砖等级:LV1">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 深蓝de小屋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/09/29/AndroidNote1/" class="post-title-link" itemprop="url">Android笔记一</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-09-29 11:35:33 / 修改时间：13:44:57" itemprop="dateCreated datePublished" datetime="2022-09-29T11:35:33+08:00">2022-09-29</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>项目创建过程中，包名称遵循”DNS反转”约定，也就是将企业组织或公司的域名反转后，在尾部附加上应用名称，这样可以保证包名的唯一性。<br>为了体现布局和Activity之间的对应关系，约定布局的命名规则是：颠倒Activity子类名的单词顺序并全部转小写，然后在单词之间加上下划线。  </p>
+<h1 id="Activity"><a href="#Activity" class="headerlink" title="Activity"></a>Activity</h1><p>APPCompatAcivity实际是一个Activity子类，能够为Android旧版本系统提供兼容支持。<br>在Activity中，调用一下方法引用已经生成的组件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public View findViewById(int id)</span><br></pre></td></tr></table></figure>
+
+<h1 id="资源文件"><a href="#资源文件" class="headerlink" title="资源文件"></a>资源文件</h1><p>资源是APP中非代码形式的内容，如图像文件、音频文件以及XML文件等<br>项目所有资源文件都存放在目录app/res的子目录下。布局资源存放在res/layout目录下，字符串资源文件存放在res/values目录下  </p>
+
       
     </div>
 
@@ -833,89 +1004,9 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.darkbluejoli.top/2019/09/11/CvsJava/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="DarkBlueJOLI">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="深蓝de小屋">
-      <meta itemprop="description" content="大四<br/>计算机科学与技术专业<br/>Bug制造商<br/>搬砖等级:LV1">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 深蓝de小屋">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/09/11/CvsJava/" class="post-title-link" itemprop="url">C和Java编译的区别</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-09-11 09:29:47" itemprop="dateCreated datePublished" datetime="2019-09-11T09:29:47+08:00">2019-09-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-09-29 09:57:04" itemprop="dateModified" datetime="2022-09-29T09:57:04+08:00">2022-09-29</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>作为两种不同变成语言C和Java有着完全不同的编译过程，而正是因为如此，他们也具有不同的性质。<br>C语言在编译时会根据不同的平台生成不同的代码，其编译后的可执行文件只能在编译的平台上运行，所以只能存在源码级的可移植性。
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/09/11/CvsJava/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 </div>
   </main>
