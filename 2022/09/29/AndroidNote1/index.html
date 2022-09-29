@@ -21,15 +21,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blog.darkbluejoli.top","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="创建项目项目创建过程中，包名称遵循”DNS反转”约定，也就是将企业组织或公司的域名反转后，在尾部附加上应用名称，这样可以保证包名的唯一性。为了体现布局和Activity之间的对应关系，约定布局的命名规则是：颠倒Activity子类名的单词顺序并全部转小写，然后在单词之间加上下划线。   ActivityAPPCompatAcivity实际是一个Activity子类，能够为Android旧版本系统提">
+    <meta name="description" content="创建项目项目创建过程中，包名称遵循”DNS反转”约定，也就是将企业组织或公司的域名反转后，在尾部附加上应用名称，这样可以保证包名的唯一性。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android笔记一">
 <meta property="og:url" content="https://blog.darkbluejoli.top/2022/09/29/AndroidNote1/index.html">
 <meta property="og:site_name" content="深蓝de小屋">
-<meta property="og:description" content="创建项目项目创建过程中，包名称遵循”DNS反转”约定，也就是将企业组织或公司的域名反转后，在尾部附加上应用名称，这样可以保证包名的唯一性。为了体现布局和Activity之间的对应关系，约定布局的命名规则是：颠倒Activity子类名的单词顺序并全部转小写，然后在单词之间加上下划线。   ActivityAPPCompatAcivity实际是一个Activity子类，能够为Android旧版本系统提">
+<meta property="og:description" content="创建项目项目创建过程中，包名称遵循”DNS反转”约定，也就是将企业组织或公司的域名反转后，在尾部附加上应用名称，这样可以保证包名的唯一性。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-29T03:35:33.000Z">
-<meta property="article:modified_time" content="2022-09-29T05:44:57.612Z">
+<meta property="article:modified_time" content="2022-09-29T08:45:32.330Z">
 <meta property="article:author" content="DarkBlueJOLI">
 <meta property="article:tag" content="Android">
 <meta property="article:tag" content="笔记">
@@ -218,7 +218,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-09-29 11:35:33 / 修改时间：13:44:57" itemprop="dateCreated datePublished" datetime="2022-09-29T11:35:33+08:00">2022-09-29</time>
+      <time title="创建时间：2022-09-29 11:35:33 / 修改时间：16:45:32" itemprop="dateCreated datePublished" datetime="2022-09-29T11:35:33+08:00">2022-09-29</time>
     </span>
 
   
@@ -231,7 +231,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>项目创建过程中，包名称遵循”DNS反转”约定，也就是将企业组织或公司的域名反转后，在尾部附加上应用名称，这样可以保证包名的唯一性。<br>为了体现布局和Activity之间的对应关系，约定布局的命名规则是：颠倒Activity子类名的单词顺序并全部转小写，然后在单词之间加上下划线。  </p>
+        <h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>项目创建过程中，包名称遵循”DNS反转”约定，也就是将企业组织或公司的域名反转后，在尾部附加上应用名称，这样可以保证包名的唯一性。  <span id="more"></span><br>为了体现布局和Activity之间的对应关系，约定布局的命名规则是：颠倒Activity子类名的单词顺序并全部转小写，然后在单词之间加上下划线。  </p>
 <h1 id="Activity"><a href="#Activity" class="headerlink" title="Activity"></a>Activity</h1><p>APPCompatAcivity实际是一个Activity子类，能够为Android旧版本系统提供兼容支持。<br>在Activity中，调用一下方法引用已经生成的组件：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public View findViewById(int id)</span><br></pre></td></tr></table></figure>
 
